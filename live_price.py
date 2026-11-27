@@ -1,4 +1,4 @@
-# Basic live stock tracker
+# Basic live stock tracker - Third section
 
 import time
 from datetime import datetime
@@ -6,12 +6,14 @@ from datetime import datetime
 import yfinance as yf
 
 
+# Function fetches current price and displays it every 5 seconds
 def stream_price(ticker_symbol: str, interval: int = 5):
     print(f"Starting price stream for {ticker_symbol}")
     
     try:
         while True:
             ticker = yf.Ticker(ticker=ticker_symbol)
+            # A ticker object can return varying information about the asset
             price = ticker.fast_info["last_price"]
             timestamp = datetime.now().strftime("%H:%M:%S")
 
@@ -23,4 +25,3 @@ def stream_price(ticker_symbol: str, interval: int = 5):
 
 if __name__ == "__main__":
     stream_price("BTC-GBP", interval=5)
-
