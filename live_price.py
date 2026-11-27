@@ -24,4 +24,4 @@ def stream_price(ticker_symbol: str, interval: int = 5):
         print("\nStream stopped.")
 
 if __name__ == "__main__":
-    stream_price("BTC-GBP", interval=5)
+    stream_price("BTC-USD", interval=5)
